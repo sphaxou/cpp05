@@ -1,0 +1,10 @@
+{
+	"makefile.extensionOutputFolder": "./.vscode",
+	"makefile.launchConfigurations": [
+		{
+			"cwd": "/mnt/nfs/homes/vgallois/Desktop/gitgud/cpp05/ex00",
+			"binaryPath": "/mnt/nfs/homes/vgallois/Desktop/gitgud/cpp05/ex00/bureaucrat",
+			"binaryArgs": []
+		}
+	]
+}

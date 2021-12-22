@@ -14,6 +14,7 @@ NAME	= bureaucrat
 
 SRC		= main.cpp\
 		Bureaucrat.cpp\
+		Form.cpp\
 
 OBJ		= $(addprefix $(OBJDIR),$(SRC:.cpp=.o))
 

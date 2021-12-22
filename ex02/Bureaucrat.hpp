@@ -16,6 +16,8 @@
 #include <string>
 #include <exception>
 
+class Form;
+
 class Bureaucrat
 {
 	private:
@@ -46,6 +48,8 @@ class Bureaucrat
 
 		void incGrade();
 		void decGrade();
+
+		void signForm(Form &form);
 };
 
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &Bureaucrat);
