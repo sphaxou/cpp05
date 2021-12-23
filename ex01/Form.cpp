@@ -10,6 +10,9 @@ Form::Form(int sign, int exec, const std::string n):name(n), grade_to_sign(sign)
 	is_signed = false;
 }
 
+Form::Form(const Form &src): name(src.name), grade_to_sign(src.grade_to_sign), grade_to_exec(src.grade_to_exec)
+{is_signed = src.is_signed;}
+
 Form::~Form()
 {}
 

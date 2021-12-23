@@ -2,61 +2,29 @@
 #include "Form.hpp"
 #include <iostream>
 #include <string>
-
+#include "ShrubberyCreationForm.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
 
 int main()
 {
-	try
-	{
-		std::cout << "grade 0" << std::endl;
-		Form a(0, 50, "A");
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-	try
-	{
-		std::cout << "\ngrade 151" << std::endl;
-		Form a(50, 151, "A");
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
+	ShrubberyCreationForm shrub("test");
+	PresidentialPardonForm pres("Prout");
+	RobotomyRequestForm robot("JP");
+	Bureaucrat bob("Bob", 50);
+	Bureaucrat Zafod("Zafod Beeblebrox", 1);
+	shrub.execute(bob);
+	bob.signForm(shrub);
+	shrub.execute(bob);
+	bob.executeForm(pres);
+	Zafod.signForm(pres);
+	bob.executeForm(pres);
+	Zafod.executeForm(pres);
+	bob.executeForm(robot);
+	Zafod.executeForm(robot);
+	Zafod.signForm(robot);
+	bob.executeForm(robot);
+	Zafod.executeForm(robot);
 
-	try
-	{
-		std::cout << "\ntest beSigned with wrong grade" << std::endl;
-		Bureaucrat a("Paul", 50);
-		Form A(40, 40, "A");
-		std::cout << A << std::endl;
-		A.beSigned(a);
-		std::cout << A << std::endl;
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-	try
-	{
-		std::cout << "\ntest beSigned success" << std::endl;
-		Bureaucrat a("Paul", 30);
-		Form A(40, 40, "A");
-		std::cout << A << std::endl;
-		A.beSigned(a);
-
-		std::cout << A << std::endl;
-
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-	Bureaucrat a("Paul", 30);
-	Form A(40, 40, "A");
-	Form B(20, 20, "B");
-	a.signForm(A);
-	a.signForm(B);
 	return (0);
 }
